@@ -13,4 +13,3 @@ export declare class IovWriter {
     signAndCommit(tx: UnsignedTransaction, keyring: number | KeyringEntryId): Promise<BcpTransactionResponse>;
     private getChain;
 }
-export declare const bnsConnector: (url: string) => ChainConnector;
