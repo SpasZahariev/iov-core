@@ -47,7 +47,7 @@ async function loadChainId(baseUrl: string): Promise<ChainId> {
 }
 
 export class LiskConnection implements BcpConnection {
-  public static async connect(baseUrl: string): Promise<LiskConnection> {
+  public static async establish(baseUrl: string): Promise<LiskConnection> {
     const chainId = await loadChainId(baseUrl);
     return new LiskConnection(baseUrl, chainId);
   }
