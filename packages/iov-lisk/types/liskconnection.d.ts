@@ -1,5 +1,5 @@
 import { Stream } from "xstream";
-import { Address, BcpAccount, BcpAccountQuery, BcpConnection, BcpNonce, BcpQueryEnvelope, BcpTicker, BcpTransactionResponse, ConfirmedTransaction, Nonce, TokenTicker } from "@iov/bcp-types";
+import { BcpAccount, BcpAccountQuery, BcpConnection, BcpNonce, BcpQueryEnvelope, BcpTicker, BcpTransactionResponse, ConfirmedTransaction, Nonce, TokenTicker } from "@iov/bcp-types";
 import { ChainId, PostableBytes, Tag, TxQuery } from "@iov/tendermint-types";
 export declare function generateNonce(): Nonce;
 export declare class LiskConnection implements BcpConnection {
@@ -15,8 +15,6 @@ export declare class LiskConnection implements BcpConnection {
     getAllTickers(): Promise<BcpQueryEnvelope<BcpTicker>>;
     getAccount(query: BcpAccountQuery): Promise<BcpQueryEnvelope<BcpAccount>>;
     getNonce(query: BcpAccountQuery): Promise<BcpQueryEnvelope<BcpNonce>>;
-    changeBalance(_: Address): Stream<number>;
-    changeNonce(_: Address): Stream<number>;
     changeBlock(): Stream<number>;
     watchAccount(_: BcpAccountQuery): Stream<BcpAccount | undefined>;
     watchNonce(_: BcpAccountQuery): Stream<BcpNonce | undefined>;
